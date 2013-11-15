@@ -2,8 +2,41 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+# Syntaxe #
+# HTTP method    URI patern          Call to the Action generator method
+## HTTP method ##
+# GET POST PUT DELETE HEAD
+
+## URI pattern ##
+# Peuvent être statiques /tasks ou dynamiques /tasks/:id
+# il peut y avoir plusieurs elements dynamique. Des expressions regulieres
+# peuvent etre utilisees.
+# Plusieurs chemin peuvent etre specifies d'un coup: /path/*name fait reference
+# a /path/fichier/momo.txt, /path/pipo.png ... name vaut respectivement :
+# fichier.momo.txt et pipo;png.
+
+## Call to the Action generator method ##
+# Reference sur une Action.
+# Si des parametres sont donnes ils peuvent etre passe en argument.
+# debase les parameres recupere de l'URI sont des string. pour specifier un
+# autre type celui ci doit etre mis à la suite de l'argument apres deux-points.
+# Des parametres par defaut ou optionels peuvent etre donnes.
+
+# En cas de doute entre deux URi c'est celui specifie en premier qui
+# prends le pas.
+
+# Reverse routing #
+# Tous les chemins indiques ici peuvent être accessible
+# depuis le Controller play.api.mvc.
+# controllers.Application.monAction -> routes.Application.monAction
+
 # Home page
 GET     /                           controllers.Application.index
+
+#  Tasks management
+GET     /tasks                      controllers.Application.tasks
+POST    /tasks                      controllers.Application.newTask
+POST    /tasks/:id/delete           controllers.Application.deleteTask(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
