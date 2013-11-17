@@ -1,7 +1,58 @@
 @(tasks: List[Task], taskForm: Form[String])
 
 
-<!-- IntelliJ a supprimer tous mes commentaires en plantant :( -->
+<!-- ## Fichier "*.scala.html/scc/xml/..." ##
+    Si je me souviens bien.
+
+    Des parametre peuvent etre mis en entree d'un template (comme une
+    fonction). Si les parametres sont dans des parentheses differentes cela
+    permet de passer du contenus comme si on decrivait une fonction.
+    ex : ici on appele "main" avec comme premier argument un (title: String)
+    -> "Todx List") et en second argument (content: Html) tout ce qui suit
+    entre accolades apres l'appel de la "fonction" est passe.
+
+    D'apres ce que j'ai compris index est un "template" et
+    main est un "layout".
+
+    On peut utiliser n'importe quels type de fichiers classique (html, css ...)
+    et ajouter du code scala.
+    Pour ajouter du code il faut faire preceder l'expression par <arobase>
+    Si l'expression estcomplexe la mettre entre () ou {}.
+
+    /!\ l'<arobase> ne fonctionne que sur une ligne, mettre l'acolade ouvrante
+    a la suite sinon elle ne sera pas consideree comme etant du code scala.
+ -->
+<!--
+    ## Form - Formulaires ##
+    http://www.playframework.com/documentation/2.2.x/ScalaForms
+
+    1. definir une classe (case class) avec les elements que l'on compte
+    recevoir.
+    ex : Task
+
+    2. Il faut ensuite definir la structure de la form (dans le controller)
+    pour relier les elements du formulaire avec la classe cree.
+    Des contraintes peuvent aussi etre definies
+    ex: taskForm (ici il y a juste un String)
+
+    Des contraintes ad-hoc peuvent etre definies et les fomulaires peuvent
+    etre valides depuis une action
+
+    Je n'ai pas tout compris il faudrais que je vois des exemples.
+
+    3. Affichage des formulaires
+    Dans le fichier *.scala.html (ici)
+    Le formulaire est specifie. Il est lié a une action (par reverse rooting)
+    ex ici a newTask.
+    Ensuite le formulaire est specifie grace a l'helper (voir la doc pour voir
+    ce qu'il y a, il est possible de cree ses propres helpers).
+    C'est aussi ici que sont gere les erreurs mais je ne sais pas ce que c'est.
+    Voir la documentation pour tout ce qui est mise en page et ajout :
+    valeurs par defaut, champs imbriques, valeurs optionelles ...
+    il y a un bel exemple a la fin
+
+
+ -->
 
 
 @import helper._
@@ -12,13 +63,13 @@
 
     <ul>
         @tasks.map { task =>
-            <li>
-                @task.label
+        <li>
+            @task.label
 
-                @form(routes.Application.deleteTask(task.id)) {
-                    <input type="submit" value="Delete">
-                }
-            </li>
+            @form(routes.Application.deleteTask(task.id)) {
+                <input type="submit" value="Delete">
+            }
+        </li>
         }
     </ul>
 
