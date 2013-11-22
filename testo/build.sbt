@@ -9,3 +9,9 @@ libraryDependencies ++= Seq(
 )     
 
 play.Project.playScalaSettings
+
+# Déja dans les libraryDependencies ??
+#val appDependencies = Seq
+#(
+#      jdbc
+#)

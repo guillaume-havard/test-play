@@ -23,12 +23,19 @@ normal, pas encore vu
         * -> [Custom format](http://www.playframework.com/documentation/2.2.x/ScalaCustomTemplateFormat)
     * -> *[handling form submission](http://www.playframework.com/documentation/2.2.x/ScalaForms)*
 * *Form*
-* database **<- À faire**
+* database 
+    * -> *[Acceder à un DB](http://www.playframework.com/documentation/2.2.x/ScalaDatabase)* relire un peu
     * -> [Evolutions](http://www.playframework.com/documentation/2.2.x/Evolutions)
     * -> [Anorm](http://www.playframework.com/documentation/2.2.x/ScalaAnorm)
-* deploying to heroku
+* deploying to heroku **<- pas fait**
     * -> [Deploying to Heroku](http://www.playframework.com/documentation/2.2.x/ProductionHeroku)
     * -> [Dependencies management](http://www.playframework.com/documentation/2.2.x/SBTDependencies)
     
     
 Voir pourquoi IntelliJ met des erreurs quand il n'y en a pas ...
+
+En plus : 
+
+* [Anatomie d'une application](http://www.playframework.com/documentation/2.2.x/Anatomy) *déjà plus haut*
+* [Ajout dépendances](http://www.playframework.com/documentation/2.2.x/SBTDependencies)
+
